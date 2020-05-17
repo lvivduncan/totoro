@@ -1,0 +1,11 @@
+/* base style */
+@import url('./root.css');
+
+/* navigation */
+@import url('./nav.css');
+
+/* other style */
+@import url('./home.css');
+
+/* footer */
+@import url('./footer.css');

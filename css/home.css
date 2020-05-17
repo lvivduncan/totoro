@@ -1,271 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-/* /////////
-базові стилі
-///////// */
-
-/* root colors */
-:root {
-  --red: #c00;
-  --black: #000;
-  --white: #fff;
-  --light: #aab2bd;
-  --light-gray: #656d78;
-  --gray: #666;
-}
-
-.color-red {
-  color: var(--red);
-}
-
-/* icons */
-@font-face {
-  font-family: 'fontello';
-  src: url('../font/fontello.eot?25377021');
-  src: url('../font/fontello.eot?25377021#iefix') format('embedded-opentype'),
-    url('../font/fontello.woff?25377021') format('woff'),
-    url('../font/fontello.ttf?25377021') format('truetype'),
-    url('../font/fontello.svg?25377021#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-
-  font-variant: normal;
-  text-transform: none;
-
-  line-height: 1em;
-
-  margin-left: .2em;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-facebook:before {
-  content: '\e800';
-}
-
-.icon-twitter:before {
-  content: '\e801';
-}
-
-.icon-search:before {
-  content: '\e802';
-}
-
-.icon-paper-plane:before {
-  content: '\f01d';
-}
-
-.icon-mail-alt:before {
-  content: '\f0e0';
-}
-
-.icon-youtube-squared:before {
-  content: '\f166';
-}
-
-*,
-::after,
-::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  outline: 0;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  color: var(--light);
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-a:hover,
-a:active {
-  color: var(--red);
-}
-
-body {
-  height: 100%;
-  font: 16px/1.5 'Fira Sans', Arial, sans-serif;
-  color: var(--black);
-  background: var(--white);
-}
-
-/* підзаголовки */
-.title {
-  font-size: 24px;
-  line-height: 28px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* ////////////////////////////////
-фіксована смуга з логотипом та меню
-//////////////////////////////// */
-
-#nav {
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 20;
-  padding: 10px 0 0;
-
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.75) 100%);
-
-  display: grid;
-  grid-template-columns: 1fr 300px 900px 100px 1fr;
-  grid-template-rows: 1fr;
-}
-
-/* + прокрутка */
-#nav.scroll {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
-}
-
-#logo {
-  grid-area: 1 / 2 / 2 / 3;
-  text-align: center;
-}
-
-#logo img {
-  margin-left: 30px;
-}
-
-#menu {
-  grid-area: 1 / 3 / 2 / 4;
-}
-
-/* верхнє меню */
-#top-menu {}
-
-/* пункти меню зліва */
-#main-menu {
-  padding: 10px;
-  display: inline-block;
-}
-
-#main-menu li {
-  display: inline-block;
-}
-
-#main-menu li a {
-  display: block;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-  text-decoration: none;
-  padding: 0 12px;
-}
-
-#main-menu li a:hover {
-  color: var(--red);
-}
-
-/* соціальні кнопки справа */
-#social-menu {
-  display: inline-block;
-  color: var(--white);
-  padding: 10px;
-}
-
-#social-menu li {
-  display: inline-block;
-  margin: 0 11px;
-}
-
-#social-menu li a {
-  color: var(--white);
-}
-
-#social-menu li a:hover {
-  color: var(--red);
-}
-
-#social-menu li a i {
-  font-size: 20px;
-}
-
-/* Актуальні теми: */
-#hot-menu {
-  display: inline-block;
-  padding: 10px 10px 10px 20px;
-}
-
-#hot-menu::before {
-  content: 'Актуальні теми:';
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-#hot-menu ul {
-  display: inline-block;
-}
-
-#hot-menu ul li {
-  display: inline-block;
-  margin: 0 0 0 5px;
-  padding: 0 0 0 5px;
-}
-
-#hot-menu ul li a {
-  color: var(--white);
-}
-
-#hot-menu ul li a:hover {
-  color: var(--red);
-}
-
-#hot-menu ul li a::before {
-  content: '#';
-  width: 10px;
-  height: 10px;
-  padding: 0 5px;
-  border-radius: 10px;
-  background: var(--white);
-  color: var(--black);
-}
-
-/* пошук */
-#search {
-  grid-area: 1 / 4 / 2 / 5;
-  color: var(--white);
-  padding: 10px;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-
-
 /* //////////////////////
 шаблон головної сторінки 
 ////////////////////// */
+
 #page {
   display: grid;
   grid-template-columns: 1fr 300px repeat(2, 500px) 1fr;
   grid-template-rows: 700px 1fr auto;
+}
+
+@media(max-width: 1340px){
+  #page{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 340px auto auto;
+  }
+}
+
+@media(max-width: 640px){
+  #page{
+    grid-template-columns: 1fr;
+  }
 }
 
 /*/////
@@ -274,12 +27,13 @@ body {
 
 #levus-slider-wrapper {
   grid-area: 1 / 1 / 2 / 6;
-
   overflow: hidden;
   position: relative;
 }
 
 #levus-slider {
+  grid-area: slider-main;
+
   width: 1300px;
   height: 700px;
   position: relative;
@@ -289,6 +43,7 @@ body {
 @media(max-width: 776px) {
   #levus-slider {
     height: 340px;
+    width: 100%;
   }
 }
 
@@ -348,12 +103,24 @@ body {
   text-shadow: 2px 2px 1px var(--black);
 }
 
+@media(max-width: 776px){
+  #levus-slider article div{
+    padding: 0 15px 15px;
+  }
+}
+
 #levus-slider h1 {
   font-size: 42px;
   line-height: 42px;
   font-weight: 500;
   color: var(--white);
   margin: 0 0 20px;
+}
+
+@media(max-width: 776px){
+  #levus-slider h1{
+    font-size: 30px;
+  }
 }
 
 #levus-slider time {
@@ -376,6 +143,27 @@ body {
   z-index: 10;
 }
 
+@media(max-width: 991px){
+  #news {
+    grid-area: 2 / 2 / 3 / 3;
+
+    margin: 0 0 0 30px;
+  }
+}
+
+@media(max-width: 776px){
+  #news {
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 0;
+  }
+}
+
+@media(max-width: 640px){
+  #news {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+}
+
 /* обгортка новин */
 #news section {}
 
@@ -391,7 +179,6 @@ body {
   font-size: 12px;
   color: var(--light-gray);
   padding: 2px 10px 0 0;
-
 }
 
 #news article p {
@@ -417,9 +204,7 @@ body {
 /* img */
 #news article img {
   max-width: 100% !important;
-  /* display: block; */
 }
-
 
 /* //////////////////////////
 три колонки з новинами справа 
@@ -433,11 +218,36 @@ body {
   padding: 25px 60px 10px 25px;
 }
 
+@media(max-width: 991px){
+  #main{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 776px){
+  #main{
+    grid-area: 2 / 2 / 3 / 3;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 640px){
+  #main{
+    grid-area: 3 / 1 / 4 / 2;
+  }
+}
+
 /* ////////////////////////
 центральна подвійна колонка
 //////////////////////// */
 #main-articles {
   overflow: hidden;
+}
+
+@media(max-width: 776px){
+  #main-articles{
+    order: 3;
+  }
 }
 
 /* окрема новина */
@@ -449,6 +259,12 @@ body {
   display: grid;
   grid-template-columns: auto 85px;
   grid-template-rows: repeat(2, auto);
+}
+
+@media(max-width: 991px){
+  #main-articles article{
+    width: 100%;
+  }
 }
 
 /* картинка новини */
@@ -508,7 +324,11 @@ body {
 /* ///////////
 колонка справа 
 /////////// */
-#main-content {}
+@media(max-width: 776px){
+  #main-content {
+    order: 2;
+  }
+}
 
 /* окрема новина */
 #main-content article {
@@ -541,59 +361,3 @@ body {
   font-size: 12px;
 }
 
-
-/* ////
-підвал 
-//// */
-#footer {
-  grid-area: 3 / 2 / 4 / 5;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  padding: 50px 50px 10px;
-}
-
-#footer-content-info {
-  padding: 0 30px 0 0;
-}
-
-#footer-content-info p {
-  font-size: 14px;
-  line-height: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 15px;
-}
-
-#footer-content-info small {
-  font-size: 12px;
-  line-height: 1.25;
-  color: var(--light-gray);
-  display: block;
-}
-
-/* 3 меню в підвалі */
-.footer-menu {}
-
-.footer-menu ul {
-  display: block;
-}
-
-.footer-menu li {
-  display: block;
-  margin: 0 0 10px;
-}
-
-.footer-menu a {
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--gray);
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.footer-menu a:hover {
-  color: var(--red);
-}

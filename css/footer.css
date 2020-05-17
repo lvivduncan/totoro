@@ -1,0 +1,84 @@
+
+/* ////
+підвал 
+//// */
+#footer {
+  grid-area: 3 / 2 / 4 / 5;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  padding: 50px 50px 10px;
+}
+
+@media(max-width: 776px){
+  #footer{
+    grid-area: 3 / 1 / 4 / 3;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 640px){
+  #footer{
+    grid-area: 4 / 1 / 5 / 2;
+  }
+}
+
+#footer-content-info {
+  padding: 0 30px 0 0;
+}
+
+@media(max-width: 776px){
+  #footer-content-info{
+    order: 2;
+  }
+}
+
+#footer-content-info p {
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+#footer-content-info small {
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--light-gray);
+  display: block;
+}
+
+/* 3 меню в підвалі */
+.footer-menus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
+}
+
+@media(max-width: 776px){
+  .footer-menus {
+    order: 1;
+  }
+}
+
+.footer-menu ul {
+  display: block;
+}
+
+.footer-menu li {
+  display: block;
+  margin: 0 0 10px;
+}
+
+.footer-menu a {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer-menu a:hover {
+  color: var(--red);
+}
