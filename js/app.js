@@ -24,7 +24,10 @@ function levusModal(e,t){const s=document.querySelector(e),c=document.querySelec
 {
   const mobile = document.querySelector('#menu-button');
   const menu = document.querySelector('#menu');
+  // відкриваємо мобільне меню
   mobile.addEventListener('click', showMenu);
+  // закриваємо
+  menu.addEventListener('click', closeMenu);
 }
 
 // funciont show mobile menu
@@ -34,4 +37,12 @@ function showMenu() {
   const close = document.createElement('span');
   close.classList.add('close');
   menu.append(close);
+}
+
+// function close mobile menu
+function closeMenu(e){
+  if(e.target.className == "close"){
+    menu.classList.remove('show');
+    document.body.classList.remove('hidden');
+  }
 }
