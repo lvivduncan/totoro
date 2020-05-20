@@ -365,7 +365,7 @@
 /* 1 горішній блок - головне */
 #main-right-top {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     'main-right-top-header main-right-top-header'
     'main-right-top-1 main-right-top-1'
@@ -442,7 +442,7 @@
   grid-area: blog-title;
 }
 
-#blogs div{
+#blogs div {
   text-align: center;
   font-size: 14px;
 }
@@ -459,21 +459,21 @@
   grid-area: blog-3;
 }
 
-#blogs img{
+#blogs img {
   border-radius: 50%;
 }
 
 /* лінк на автора */
-#blogs a:nth-of-type(1){
+#blogs a:nth-of-type(1) {
   color: var(--red);
 }
 
-#blogs a:nth-of-type(1):hover{
+#blogs a:nth-of-type(1):hover {
   color: var(--dark);
 }
 
 /* назва статті */
-#blogs a:nth-of-type(2){
+#blogs a:nth-of-type(2) {
   display: block;
   color: var(--dark);
   margin: 10px 0 0;
@@ -483,8 +483,45 @@
   transition: color .5s;
 }
 
-#blogs a:nth-of-type(2):hover{
+#blogs a:nth-of-type(2):hover {
   color: var(--red);
 }
 
 /* блоки -- Львів, економіка, політика, життя */
+/* 50% блок зліва, 25% і 25% справа */
+.one-two {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 10px 20px;
+  grid-template-areas:
+    'one-two-title one-two-title one-two-title'
+    'one-two-1 one-two-2 one-two-3'
+}
+
+.one-two .title {
+  grid-area: one-two-title;
+}
+
+.one-two div:nth-of-type(1) {
+  grid-area: one-two-1;
+}
+
+/* відступ в артиклів у 1 колонці */
+.one-two div:nth-of-type(1) article{
+  margin: 0 0 20px;
+}
+
+.one-two div:nth-of-type(2) {
+  grid-area: one-two-2;
+}
+
+.one-two div:nth-of-type(3) {
+  grid-area: one-two-3;
+}
+
+/* лінки у 2 та 3 колонці */
+.one-two div:nth-of-type(2) a,
+.one-two div:nth-of-type(3) a {
+  font-weight: normal;
+  font-size: 14px;
+}
