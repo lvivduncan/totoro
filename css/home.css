@@ -82,7 +82,7 @@
 
 @media(max-width: 1360px) {
   #levus-slider article {
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -120,6 +120,13 @@
 @media(max-width: 776px) {
   #levus-slider h1 {
     font-size: 30px;
+  }
+}
+
+@media(max-width: 500px) {
+  #levus-slider h1 {
+    font-size: 22px;
+    line-height: 1.3;
   }
 }
 
