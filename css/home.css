@@ -228,6 +228,7 @@
   #main {
     grid-area: 2 / 2 / 3 / 3;
     grid-template-columns: 1fr;
+    padding: 25px 10px 0;
   }
 }
 
@@ -262,6 +263,7 @@
 @media(max-width: 991px) {
   #main-center article {
     width: 100%;
+    grid-template-columns: auto auto;
   }
 }
 
@@ -279,7 +281,7 @@
 #main-center .data {
   grid-area: 1 / 2 / 2 / 3;
 
-  padding: 0 0 0 10px;
+  padding: 0 10px;
   color: var(--light);
   font-size: 12px;
 }
@@ -323,7 +325,7 @@
 колонка справа (подвійна)
 ////////////////////// */
 #main-right {
-  grid-area: 1 / 4 / 3 / 5;
+  /* grid-area: 1 / 4 / 3 / 5; */
 }
 
 @media(max-width: 776px) {
@@ -331,11 +333,6 @@
     order: 2;
   }
 }
-
-
-/* #main-right article {
-  margin: 0 0 20px;
-} */
 
 #main-right img {
   max-width: 100% !important;
@@ -373,6 +370,17 @@
   grid-gap: 10px;
 }
 
+@media(max-width: 991px) {
+  #main-right-top {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'main-right-top-header'
+      'main-right-top-1'
+      'main-right-top-2'
+      'main-right-top-3';
+  }
+}
+
 #main-right-top .title {
   color: var(--red);
 }
@@ -394,9 +402,25 @@
     'main-right-top-article-1-figure main-right-top-article-1-data';
 }
 
+@media(max-width: 991px) {
+  #main-right-top article:nth-of-type(1) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'main-right-top-article-1-figure'
+      'main-right-top-article-1-name'
+      'main-right-top-article-1-data';
+  }
+}
+
 #main-right-top article:nth-of-type(1) figure {
   grid-area: main-right-top-article-1-figure;
   margin: 0 20px 0 0;
+}
+
+@media(max-width: 991px) {
+  #main-right-top article:nth-of-type(1) figure {
+    margin: 0;
+  }
 }
 
 #main-right-top article:nth-of-type(1) .name {
@@ -436,6 +460,35 @@
   grid-template-areas:
     'blog-title blog-title blog-title'
     'blog-1 blog-2 blog-3';
+}
+
+@media(max-width: 991px) {
+  #blogs {
+    grid-template-areas:
+      'blog-title'
+      'blog-1'
+      'blog-2'
+      'blog-3';
+  }
+}
+
+/* ховаємо? */
+@media(max-width: 776px) {
+  #blogs {
+    grid-template-areas:
+      'blog-title blog-title blog-title'
+      'blog-1 blog-2 blog-3';
+  }
+}
+
+@media(max-width: 500px) {
+  #blogs {
+    grid-template-areas:
+      'blog-title'
+      'blog-1'
+      'blog-2'
+      'blog-3';
+  }
 }
 
 #blogs .title {
@@ -479,23 +532,47 @@
   margin: 10px 0 0;
   text-align: left;
   font-weight: bold;
+
   -webkit-transition: color .5s;
   transition: color .5s;
+}
+
+@media(max-width: 991px) {
+  #blogs a:nth-of-type(2) {
+    text-align: center;
+  }
 }
 
 #blogs a:nth-of-type(2):hover {
   color: var(--red);
 }
 
-/* блоки -- Львів, економіка, політика, життя */
-/* 50% блок зліва, 25% і 25% справа */
+/* блоки -- Львів, економіка, політика, життя | 50% блок зліва, 25% центр і 25% справа */
 .one-two {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 10px 20px;
   grid-template-areas:
     'one-two-title one-two-title one-two-title'
-    'one-two-1 one-two-2 one-two-3'
+    'one-two-1 one-two-2 one-two-3';
+}
+
+@media(max-width: 991px) {
+  .one-two {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'one-two-title'
+      'one-two-1'
+      'one-two-2'
+      'one-two-3';
+  }
+}
+
+/* ховаємо */
+@media(max-width: 776px) {
+  .one-two {
+    display: none;
+  }
 }
 
 .one-two .title {
@@ -507,7 +584,7 @@
 }
 
 /* відступ в артиклів у 1 колонці */
-.one-two div:nth-of-type(1) article{
+.one-two div:nth-of-type(1) article {
   margin: 0 0 20px;
 }
 
@@ -524,4 +601,9 @@
 .one-two div:nth-of-type(3) a {
   font-weight: normal;
   font-size: 14px;
+}
+
+/* рекламні банери */
+#main-right aside {
+  margin: 20px 0;
 }
