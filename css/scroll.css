@@ -35,6 +35,12 @@
   z-index: 1;
 }
 
+@media(max-width: 776px){
+  .levus-scroll{
+    height: 360px;
+  }
+}
+
 /* elements */
 .scroll-item {
   padding: 0 10px;
