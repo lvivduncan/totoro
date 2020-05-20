@@ -17,3 +17,21 @@
 
 // levus-modal
 function levusModal(e,t){const s=document.querySelector(e),c=document.querySelector(t),d=document.createElement("div");d.classList.add("levus-close"),document.body.append(d),s.addEventListener("click",e=>{c.classList.add("active"),document.body.classList.add("levus-body"),d.classList.add("active")}),d.addEventListener("click",e=>{c.classList.remove("active"),document.body.removeAttribute("class"),d.classList.remove("active")}),document.addEventListener("keyup",e=>{"Escape"!==e.key&&"Escape"!==e.keyCode||(c.classList.remove("active"),document.body.removeAttribute("class"),d.classList.remove("active"))})}
+
+// search
+
+// mobile-menu
+{
+  const mobile = document.querySelector('#menu-button');
+  const menu = document.querySelector('#menu');
+  mobile.addEventListener('click', showMenu);
+}
+
+// funciont show mobile menu
+function showMenu() {
+  menu.classList.add('show');
+  document.body.classList.add('hidden');
+  const close = document.createElement('span');
+  close.classList.add('close');
+  menu.append(close);
+}

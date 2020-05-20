@@ -6,6 +6,7 @@
 :root {
   --red: #c00;
   --black: #000;
+  --opacity-black: rgb(0 0 0 / 90%);
   --white: #fff;
   --light: #aab2bd;
   --light-gray: #656d78;
@@ -41,6 +42,11 @@ body {
   font: 16px/1.5 'Fira Sans', Arial, sans-serif;
   color: var(--black);
   background: var(--white);
+}
+
+/* заблоковане боді у мобільному меню */
+body.hidden{
+  overflow: hidden;
 }
 
 /* підзаголовки */

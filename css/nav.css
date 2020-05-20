@@ -53,6 +53,12 @@
   }
 }
 
+@media(max-width: 500px) {
+  #logo {
+    width: 120px;
+  }
+}
+
 #logo img {
   margin-left: 30px;
   max-width: 100%;
@@ -73,6 +79,7 @@
     display: none;
   }
 }
+
 
 /* верхнє меню */
 #top-menu {}
@@ -138,6 +145,79 @@
 
 #social-menu li a i {
   font-size: 20px;
+}
+
+/* ///////////////
+меню на мобільному
+/////////////// */
+#menu.show {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--opacity-black);
+  grid-area: none;
+  z-index: 35;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+#menu.show #main-menu li {
+  display: block;
+  margin: 0 0 5px;
+}
+
+#menu.show #hot-menu,
+#menu.show #hot-menu ul {
+  display: block;
+  text-align: center;
+}
+
+#menu.show #hot-menu::before {
+  text-align: center;
+  display: block;
+}
+
+#menu.show #hot-menu li {
+  margin: 0 0 10px;
+  display: block;
+}
+
+/* кнопка закриття мобільного меню */
+#menu.show .close {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 40;
+  cursor: pointer
+}
+
+#menu.show .close::after,
+#menu.show .close::before {
+  content: '';
+  height: 3px;
+  width: 30px;
+  background: var(--white);
+  position: absolute;
+  top: 15px;
+  left: 0
+}
+
+#menu.show .close::after {
+  transform: rotate(50deg)
+}
+
+#menu.show .close::before {
+  transform: rotate(-50deg)
+}
+
+#menu.show .close.active {
+  display: block
 }
 
 /* Актуальні теми: */
@@ -248,13 +328,13 @@ button online-radio
   justify-content: center;
 }
 
-#radio span{
+#radio span {
   height: 30px;
   line-height: 30px;
   display: inline-block;
 }
 
-#radio i{
+#radio i {
   font-size: 26px;
   color: var(--red);
 }
