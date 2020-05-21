@@ -180,6 +180,12 @@
   display: block;
 }
 
+@media(max-width: 776px){
+  #menu.show #hot-menu::before {
+    margin: 0 0 5px;
+  }
+}
+
 #menu.show #hot-menu li {
   margin: 0 0 10px;
   display: block;
@@ -250,13 +256,15 @@
 
 #hot-menu ul li a {
   color: var(--white);
+  display: inline-block;
+  margin: 0 0 0 5px;
 }
 
 #hot-menu ul li a:hover {
   color: var(--red);
 }
 
-#hot-menu ul li a::before {
+#hot-menu ul li::before {
   content: '#';
   width: 10px;
   height: 10px;
@@ -337,4 +345,100 @@ button online-radio
 #radio i {
   font-size: 26px;
   color: var(--red);
+}
+
+/* //////////
+кнопка пошуку
+////////// */
+/* блок бажано розмістити у самому низу */
+#search-form{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--opacity-black);
+  z-index: 35;
+}
+
+#search-form.show {
+  display: block;
+}
+
+/* кнопка закриття мобільного меню */
+#search-form.show .close {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 40;
+  cursor: pointer
+}
+
+#search-form.show .close::after,
+#search-form.show .close::before {
+  content: '';
+  height: 3px;
+  width: 30px;
+  background: var(--white);
+  position: absolute;
+  top: 15px;
+  left: 0
+}
+
+#search-form.show .close::after {
+  transform: rotate(50deg)
+}
+
+#search-form.show .close::before {
+  transform: rotate(-50deg)
+}
+
+#search-form.show .close.active {
+  display: block
+}
+
+#search-form form{
+  display: flex;
+  min-width: 220px;
+  width: auto;
+  /* background: var(--white); */
+  /* padding: 10px; */
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#search-form input[type="search"]{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light);
+  color: var(--light);
+  font-size: 14px;
+  border-right: none;
+  outline: none;
+  background: none;
+}
+
+#search-form button{
+  width: 38px;
+  height: 38px;
+  outline: none;
+  border: 1px solid var(--light);
+  border-left: none;
+  background: none;
+  cursor: pointer;
+}
+
+#search-form button i{
+  font-family: 'fontello';
+  content: '\e800';
+  color: var(--light);
+  font-size: 16px;
+  display: inline-block;
 }
