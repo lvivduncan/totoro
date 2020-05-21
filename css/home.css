@@ -312,7 +312,7 @@
 
 /* блок з кнопкою "усі статті" */
 #main-center footer {
-  clear: both;
+  /* clear: both; */
   text-align: center;
   padding: 20px 0 0;
 }
