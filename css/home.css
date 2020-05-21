@@ -2,21 +2,21 @@
 шаблон головної сторінки 
 ////////////////////// */
 
-#page {
+#home-page {
   display: grid;
   grid-template-columns: 1fr 300px repeat(2, 500px) 1fr;
   grid-template-rows: 700px 1fr auto;
 }
 
 @media(max-width: 1340px) {
-  #page {
+  #home-page {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 340px auto auto;
   }
 }
 
 @media(max-width: 640px) {
-  #page {
+  #home-page {
     grid-template-columns: 1fr;
   }
 }
@@ -94,7 +94,7 @@
 
 /* текст нa слайді */
 #levus-slider article div {
-  display: block;
+  /* display: block; */
   position: absolute;
   left: 0;
   width: 100%;

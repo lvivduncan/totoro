@@ -7,8 +7,11 @@
 /* navigation */
 @import url('./nav.css');
 
-/* other style */
+/* home-page other style */
 @import url('./home.css');
+
+/* inner-page other style */
+@import url('./page.css');
 
 /* scroll */
 @import url('./scroll.css');
