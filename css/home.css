@@ -216,7 +216,7 @@
 /* //////////////////////////
 три колонки з новинами справа 
 ////////////////////////// */
-#main {
+#home-page-content {
   grid-area: 2 / 3 / 3 / 5;
 
   display: grid;
@@ -226,13 +226,13 @@
 }
 
 @media(max-width: 991px) {
-  #main {
+  #home-page-content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media(max-width: 776px) {
-  #main {
+  #home-page-content {
     grid-area: 2 / 2 / 3 / 3;
     grid-template-columns: 1fr;
     padding: 25px 10px 0;
@@ -240,7 +240,7 @@
 }
 
 @media(max-width: 640px) {
-  #main {
+  #home-page-content {
     grid-area: 3 / 1 / 4 / 2;
   }
 }
