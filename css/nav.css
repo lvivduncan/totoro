@@ -20,7 +20,7 @@
 
 @media(max-width: 1340px) {
   #nav {
-    grid-template-columns: auto 300px 1fr 40px auto;
+    grid-template-columns: auto 300px 1fr 60px auto;
   }
 }
 
@@ -303,7 +303,6 @@ mobile buttons
 
 @media(max-width: 776px) {
   #mobile {
-    /* display: block; */
     display: flex;
     align-items: center;
     height: 38px;
@@ -350,6 +349,7 @@ button online-radio
 /* //////////
 кнопка пошуку
 ////////// */
+
 /* блок бажано розмістити у самому низу */
 #search-form{
   display: none;
@@ -405,8 +405,6 @@ button online-radio
   display: flex;
   min-width: 220px;
   width: auto;
-  /* background: var(--white); */
-  /* padding: 10px; */
   
   position: absolute;
   top: 50%;

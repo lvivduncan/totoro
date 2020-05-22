@@ -7,6 +7,12 @@
   position: relative;
 }
 
+@media(max-width: 776px){
+  #header{
+    height: 400px;
+  }
+}
+
 #header-background {
   background-position: center center !important;
   background-size: cover !important;
@@ -23,6 +29,12 @@
   height: 700px;
 }
 
+@media(max-width: 991px){
+  #header-background{
+    display: none;
+  }
+}
+
 #header-gradient {
   position: absolute;
   left: 0;
@@ -33,6 +45,12 @@
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+@media(max-width: 991px){
+  #header-gradient{
+    display: none;
+  }
 }
 
 #header-content {
@@ -65,11 +83,24 @@
   }
 }
 
+@media(max-width: 776px){
+  #header-content{
+    height: 400px;
+  }
+}
+
 #header-content h1 {
   font-size: 42px;
   line-height: 42px;
   font-weight: 500;
   margin: 0 0 20px;
+}
+
+@media(max-width: 776px){
+  #header-content h1{
+    font-size: 20px;
+    line-height: 22px;
+  }
 }
 
 #header-content time {
@@ -86,19 +117,33 @@
   display: grid;
   grid-template-columns: 250px 650px 350px;
   grid-gap: 25px;
+  grid-template-areas: 
+    'left-aside page-content right-aside';
 }
 
 @media(max-width: 1340px){  
   #inner-page-content{
-    width: 100%;
-    grid-template-columns: 25% 50% 25%;
+    width: 95%;
+    grid-template-columns: calc(25% - 50px) 50% 25%;
   }
 }
 
 @media(max-width: 991px){
   #inner-page-content{
-    width: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+      'left-aside page-content'
+      'right-aside page-content';
+  }
+}
+
+@media(max-width: 500px){
+  #inner-page-content{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'page-content'
+      'left-aside'
+      'right-aside';
   }
 }
 
@@ -106,8 +151,10 @@
   max-width: 100% !important;
 }
 
-/* бокові колонки */
-#inner-page-content aside {}
+/* боковa колонкa */
+#left-aside {
+  grid-area: left-aside;
+}
 
 /* блок статтей зліва */
 #aside-news {
@@ -156,10 +203,35 @@
 }
 
 /* основна шпальта */
-#content {}
+#page-content {
+  grid-area: page-content;
+}
 
-#content p{
+#page-content p{
   margin: 0 0 24px;
+}
+
+/* лінки у тексті */
+#page-content a {
+  color: var(--blue);
+  text-decoration: underline;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+#page-content a:hover {
+  text-decoration: none;
+  color: var(--red);
+}
+
+/* вставка іфрейму */
+#page-content iframe{
+  max-width: 100%!important;
+}
+
+/* боковa колонкa */
+#right-aside {
+  grid-area: right-aside;
 }
 
 /* блок статтей справа */
