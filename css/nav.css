@@ -386,6 +386,10 @@ button online-radio
   justify-content: center;
 }
 
+.white #radio{
+  color: var(--black);
+}
+
 #radio span {
   height: 30px;
   line-height: 30px;
