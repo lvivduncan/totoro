@@ -1,5 +1,5 @@
 // додаємо .scroll до #nav при прокрутці
-{document.addEventListener('scroll', _ =>  window.scrollY > 100 ? document.querySelector('#nav').classList = 'scroll' : document.querySelector('#nav').classList = '');}
+{document.addEventListener("scroll",e=>window.scrollY>100?document.querySelector("#nav").classList.add("scroll"):document.querySelector("#nav").classList.remove("scroll"));}
 
 // mobile-menu
 {const e=document.querySelector("#menu-button"),s=document.querySelector("#menu");if(null!==e){const t=document.createElement("span");t.classList.add("close"),s.append(t),e.addEventListener("click",e=>{s.classList.add("show"),document.body.classList.add("hidden")})}s.addEventListener("click",e=>{"close"==e.target.className&&(s.classList.remove("show"),document.body.classList.remove("hidden"))})}

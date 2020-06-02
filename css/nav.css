@@ -18,6 +18,14 @@
   grid-template-rows: 1fr;
 }
 
+/* ////////////
+інверсія хедера
+//////////// */
+#nav.white{
+  background: var(--white);
+  border-bottom: 1px solid var(--light);
+}
+
 @media(max-width: 1340px) {
   #nav {
     grid-template-columns: auto 300px 1fr 60px auto;
@@ -36,6 +44,11 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
 }
 
+/* білий фон прокрутки */
+#nav.white.scroll {
+  background: var(--white);
+}
+
 #logo {
   grid-area: 1 / 2 / 2 / 3;
   text-align: center;
@@ -46,11 +59,16 @@
   text-indent: -9999px;
 }
 
+/* сіре лого */
+.white #logo{
+  background-image: url('../images/logo-vgolos-gray.png');
+}
+
 @media(max-width: 1340px) {
   #logo {
     width: 220px;
-
     background-size: 220px;
+    margin-left: 30px;
   }
 }
 
@@ -65,19 +83,9 @@
   #logo {
     width: 120px;
     background-size: 120px;
+    margin-left: 20px;
   }
 }
-
-/* #logo img {
-  margin-left: 30px;
-  max-width: 100%;
-}
-
-@media(max-width: 776px) {
-  #logo img {
-    margin-left: 15px;
-  }
-} */
 
 #menu {
   grid-area: 1 / 3 / 2 / 4;
@@ -88,7 +96,6 @@
     display: none;
   }
 }
-
 
 /* верхнє меню */
 #top-menu {}
@@ -121,6 +128,11 @@
   padding: 0 12px;
 }
 
+/* темні пункти меню */
+.white #main-menu li a{
+  color: var(--black);
+}
+
 #main-menu li a:hover {
   color: var(--red);
 }
@@ -130,6 +142,11 @@
   display: inline-block;
   color: var(--white);
   padding: 10px;
+}
+
+/* темні лінки соціалок */
+.white #social-menu {
+  color: var(--black);
 }
 
 @media(max-width: 1200px) {
@@ -146,6 +163,11 @@
 
 #social-menu li a {
   color: var(--white);
+}
+
+/* темні лінки соціалок */
+.white #social-menu li a{
+  color: var(--black);
 }
 
 #social-menu li a:hover {
@@ -267,6 +289,11 @@
   color: var(--white);
   display: inline-block;
   margin: 0 0 0 5px;
+}
+
+/* гарячі теми темним */
+.white #hot-menu ul li a{
+  color: var(--black);
 }
 
 #hot-menu ul li a:hover {
@@ -448,12 +475,4 @@ button online-radio
   color: var(--light);
   font-size: 16px;
   display: inline-block;
-}
-
-/* ////////////
-інверсія хедера
-//////////// */
-
-#nav.white{
-
 }

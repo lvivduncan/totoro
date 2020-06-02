@@ -1,4 +1,3 @@
-
 /* /////////////////////////
 шапка внутрішньої сторінки
 ///////////////////////// */
@@ -8,8 +7,8 @@
   position: relative;
 }
 
-@media(max-width: 776px){
-  #header{
+@media(max-width: 776px) {
+  #header {
     height: 400px;
   }
 }
@@ -30,8 +29,8 @@
   height: 700px;
 }
 
-@media(max-width: 991px){
-  #header-background{
+@media(max-width: 991px) {
+  #header-background {
     display: none;
   }
 }
@@ -48,8 +47,8 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
-@media(max-width: 991px){
-  #header-gradient{
+@media(max-width: 991px) {
+  #header-gradient {
     display: none;
   }
 }
@@ -75,8 +74,8 @@
   text-shadow: 2px 2px 1px var(--black);
 }
 
-@media(max-width: 1340px){
-  #header-content{
+@media(max-width: 1340px) {
+  #header-content {
     width: 100%;
     left: 0;
     margin: auto;
@@ -84,8 +83,8 @@
   }
 }
 
-@media(max-width: 776px){
-  #header-content{
+@media(max-width: 776px) {
+  #header-content {
     height: 400px;
   }
 }
@@ -97,8 +96,8 @@
   margin: 0 0 20px;
 }
 
-@media(max-width: 776px){
-  #header-content h1{
+@media(max-width: 776px) {
+  #header-content h1 {
     font-size: 20px;
     line-height: 22px;
   }
@@ -118,30 +117,30 @@
   display: grid;
   grid-template-columns: 250px 650px 350px;
   grid-gap: 25px;
-  grid-template-areas: 
+  grid-template-areas:
     'left-aside page-content right-aside';
 }
 
-@media(max-width: 1340px){  
-  #inner-page-post{
+@media(max-width: 1340px) {
+  #inner-page-post {
     width: 95%;
     grid-template-columns: calc(25% - 50px) 50% 25%;
   }
 }
 
-@media(max-width: 991px){
-  #inner-page-post{
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas: 
+@media(max-width: 991px) {
+  #inner-page-post {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
       'left-aside page-content'
       'right-aside page-content';
   }
 }
 
-@media(max-width: 500px){
-  #inner-page-post{
+@media(max-width: 500px) {
+  #inner-page-post {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       'page-content'
       'left-aside'
       'right-aside';
@@ -188,7 +187,7 @@
   color: var(--red);
 }
 
-#aside-news footer {
+/* #aside-news footer {
   text-align: center;
   padding: 20px 0 0;
 }
@@ -201,14 +200,14 @@
 
 #aside-news footer a:hover {
   border: 1px solid var(--red);
-}
+} */
 
 /* основна шпальта */
 #page-content {
   grid-area: page-content;
 }
 
-#page-content p{
+#page-content p {
   margin: 0 0 24px;
 }
 
@@ -226,12 +225,12 @@
 }
 
 /* вставка іфрейму */
-#page-content iframe{
-  max-width: 100%!important;
+#page-content iframe {
+  max-width: 100% !important;
 }
 
 /* цитата*/
-#page-content blockquote{
+#page-content blockquote {
   margin: 10px 0 20px 20px;
   padding: 5px 5px 5px 10px;
   border-left: 3px solid var(--red);
@@ -296,7 +295,7 @@
   color: var(--red);
 }
 
-#aside-articles footer {
+/* #aside-articles footer {
   text-align: center;
   padding: 20px 0 0;
 }
@@ -309,22 +308,37 @@
 
 #aside-articles footer a:hover {
   border: 1px solid var(--red);
-}
+} */
 
 
 /* //////////////
 одиночна сторінка
 ////////////// */
 
-#inner-page-single{
+#inner-page-single {
   margin: 120px auto 0;
 
   width: 1300px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 25px;
-  grid-template-areas: 
+  grid-template-areas:
     'page-content right-aside';
+}
+
+@media(max-width: 1340px){
+  #inner-page-single{
+    width: 95%;
+  }
+}
+
+@media(max-width: 450px){
+  #inner-page-single{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'page-content'
+    'right-aside';
+  }
 }
 
 #inner-page-single img {
@@ -335,8 +349,122 @@
 важливий пост (1 вгорі)
 //////////////////// */
 
-#sinlge-content{
+#single-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin: 0 0 30px;
+  padding: 30px;
+  background: var(--footer-background);
+}
+
+@media(max-width: 450px){
+  #single-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+#single-content h3 a {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--black);
+  text-decoration: none;
+}
+
+#single-content time {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--light-gray);
+  display: block;
+  margin: 20px 0;
+}
+
+/* новини по 3 */
+#news-3-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+@media(max-width: 991px) {
+  #news-3-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 450px) {
+  #news-3-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* заголовок має бути на всю ширину */
+#news-3-item header {
+  grid-area: news-3-item-header;
+}
+
+#news-3-item article a {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--black);
+  text-decoration: none;
+}
+
+/* додаткові дані - час, автор */
+#news-3-item article .data {
+  display: flex;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--light);
+}
+
+#news-3-item article .data>* {
+  margin: 0 5px 10px;
+}
+
+/* реклама */
+.ad {
+  margin: 20px 0;
+}
+
+.ad img {
+  max-width: 100% !important;
+}
+
+/* блок нижньої реклами */
+.ad-4 {
+  width: 1300px;
+  margin: 20px auto;
+}
+
+@media(max-width: 1340px) {
+  .ad-4 {
+    width: 100%;
+  }
+}
+
+.ad-4 img {
+  max-width: 100% !important;
+}
+
+/* кнопка "далі" */
+footer.more {
+  /* grid-area: news-3-item-footer; */
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+footer.more a {
+  display: inline-block;
+  padding: 5px 40px;
+  border: 1px solid var(--light);
+  color: var(--light)!important;
+  text-decoration: none!important;
+}
+
+footer.more a:hover {
+  border: 1px solid var(--red)!important;
+  color: var(--red)!important;
 }
