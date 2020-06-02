@@ -1,3 +1,4 @@
+
 /* /////////////////////////
 шапка внутрішньої сторінки
 ///////////////////////// */
@@ -111,7 +112,7 @@
 /* /////////////
 центральний блок
 ///////////// */
-#inner-page-content {
+#inner-page-post {
   width: 1300px;
   margin: 20px auto 0;
   display: grid;
@@ -122,14 +123,14 @@
 }
 
 @media(max-width: 1340px){  
-  #inner-page-content{
+  #inner-page-post{
     width: 95%;
     grid-template-columns: calc(25% - 50px) 50% 25%;
   }
 }
 
 @media(max-width: 991px){
-  #inner-page-content{
+  #inner-page-post{
     grid-template-columns: repeat(2,1fr);
     grid-template-areas: 
       'left-aside page-content'
@@ -138,7 +139,7 @@
 }
 
 @media(max-width: 500px){
-  #inner-page-content{
+  #inner-page-post{
     grid-template-columns: 1fr;
     grid-template-areas: 
       'page-content'
@@ -147,7 +148,7 @@
   }
 }
 
-#inner-page-content img {
+#inner-page-post img {
   max-width: 100% !important;
 }
 
@@ -295,11 +296,6 @@
   color: var(--red);
 }
 
-
-
-
-
-
 #aside-articles footer {
   text-align: center;
   padding: 20px 0 0;
@@ -313,4 +309,34 @@
 
 #aside-articles footer a:hover {
   border: 1px solid var(--red);
+}
+
+
+/* //////////////
+одиночна сторінка
+////////////// */
+
+#inner-page-single{
+  margin: 120px auto 0;
+
+  width: 1300px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 25px;
+  grid-template-areas: 
+    'page-content right-aside';
+}
+
+#inner-page-single img {
+  max-width: 100% !important;
+}
+
+/* ////////////////////
+важливий пост (1 вгорі)
+//////////////////// */
+
+#sinlge-content{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
 }

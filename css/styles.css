@@ -10,8 +10,8 @@
 /* home-page other style */
 @import url('./home.css');
 
-/* blog-post style */
-@import url('./post.css');
+/* inner page style */
+@import url('./page.css');
 
 /* scroll */
 @import url('./scroll.css');
