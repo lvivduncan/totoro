@@ -133,6 +133,11 @@
   color: var(--black);
 }
 
+/* пункти меню світлі на мобільному */
+.white .show #main-menu li a{
+  color: var(--white);
+}
+
 #main-menu li a:hover {
   color: var(--red);
 }
@@ -296,6 +301,11 @@
   color: var(--black);
 }
 
+/* гарячі теми світлі на мобільному */
+.white .show #hot-menu ul li a{
+  color: var(--white);
+}
+
 #hot-menu ul li a:hover {
   color: var(--red);
 }
@@ -353,6 +363,11 @@ mobile-menu button
   color: var(--white);
   font-size: 26px;
   cursor: pointer;
+}
+
+/* чорна кнопка */
+.white #menu-button{
+  color: var(--black);
 }
 
 /* ////////////////
