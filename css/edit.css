@@ -1,0 +1,44 @@
+/* ///
+правки 
+/// */
+
+/* лінк на групу телеграм */
+.text-telegram {
+  text-align: center;
+  margin: 10px 0!important;
+}
+
+.text-telegram a {
+  color: var(--red) !important;
+}
+
+/* соціальні кнопки */
+.social {
+  text-align: center;
+  margin: 10px 0!important;
+}
+
+/* анімаційний плейсхолдер */
+.fade-in {
+  animation: fade-in 4s forwards;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
