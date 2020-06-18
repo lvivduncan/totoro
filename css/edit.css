@@ -5,7 +5,7 @@
 /* лінк на групу телеграм */
 .text-telegram {
   text-align: center;
-  margin: 10px 0!important;
+  margin: 10px 0 !important;
 }
 
 .text-telegram a {
@@ -15,30 +15,35 @@
 /* соціальні кнопки */
 .social {
   text-align: center;
-  margin: 10px 0!important;
+  margin: 10px 0 !important;
 }
 
 /* анімаційний плейсхолдер */
 .fade-in {
-  animation: fade-in 4s forwards;
+  position: relative;
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
+.fade-in::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  background: var(--white);
 
-  100% {
-    opacity: 1;
-  }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.fade-in::before {
+  content: '';
+  background: url('../images/loader.gif') no-repeat center center;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  transform: translateX(-50%);
+  margin: 0 0 0 50%;
 }
