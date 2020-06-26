@@ -315,29 +315,15 @@
 
 #aside-articles article a {
   display: block;
-  font-size: 14px;
   color: var(--black);
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
 }
 
 #aside-articles article a:hover {
   color: var(--red);
 }
-
-/* #aside-articles footer {
-  text-align: center;
-  padding: 20px 0 0;
-}
-
-#aside-articles footer a {
-  display: inline-block;
-  padding: 5px 40px;
-  border: 1px solid var(--light);
-}
-
-#aside-articles footer a:hover {
-  border: 1px solid var(--red);
-} */
-
 
 /* //////////////
 одиночна сторінка
