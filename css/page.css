@@ -237,6 +237,31 @@
   font-style: italic;
 }
 
+/* теги */
+.tags{
+  margin: 20px 0;
+}
+
+.tags::before{
+  content: 'ТЕГИ: ';
+  font-weight: bold;
+}
+
+.tags a{
+  color: var(--light)!important;
+  text-decoration: none!important;
+  display: inline-block;
+  margin: 0 0 0 5px;
+}
+
+.tags a::before{
+  content: '#';
+}
+
+.tags a:hover{
+  color: var(--red)!important;
+}
+
 /* боковa колонкa */
 #right-aside {
   grid-area: right-aside;
