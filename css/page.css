@@ -245,6 +245,9 @@
 .tags::before{
   content: 'ТЕГИ: ';
   font-weight: bold;
+  color: var(--light-gray);
+  display: inline-block;
+  margin: 0 5px 0 0;
 }
 
 .tags a{
