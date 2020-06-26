@@ -448,11 +448,13 @@
 }
 
 /* блок -- скрол "фото-відео" */
-#scroll {
+#scroll-news,
+#scroll-blogs {
   margin: 20px 0;
 }
 
-#scroll .title {
+#scroll-news .title,
+#scroll-blogs .title {
   position: absolute;
   top: 15px;
   left: 15px;
