@@ -447,19 +447,6 @@
   grid-area: main-right-top-3;
 }
 
-/* блок -- скрол "фото-відео" */
-#scroll-news,
-#scroll-blogs {
-  margin: 20px 0;
-}
-
-#scroll-news .title,
-#scroll-blogs .title {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  color: var(--white);
-}
 
 /* блок -- блоги */
 #blogs {
