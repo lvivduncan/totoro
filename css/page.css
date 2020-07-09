@@ -72,6 +72,8 @@
   background-size: cover !important;
   color: var(--white);
   text-shadow: 2px 2px 1px var(--black);
+
+  background-size: cover!important;
 }
 
 @media(max-width: 1340px) {
