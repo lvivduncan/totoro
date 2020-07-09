@@ -69,7 +69,8 @@
 
 #levus-slider article {
   background-repeat: no-repeat !important;
-  background-position: center center;
+  /* background-position: center center; */
+  background-size: cover!important;
   position: absolute;
   top: 0;
   left: 0;
