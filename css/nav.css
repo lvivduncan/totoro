@@ -280,6 +280,10 @@
   color: var(--white);
 }
 
+.white #hot-menu::before {
+  color: var(--black);
+}
+
 #hot-menu ul {
   display: inline-block;
 }
@@ -318,6 +322,11 @@
   border-radius: 10px;
   background: var(--white);
   color: var(--black);
+}
+
+.white #hot-menu ul li::before {
+  background: var(--black);
+  color: var(--white);
 }
 
 /* пошук */
