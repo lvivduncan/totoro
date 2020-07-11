@@ -1,0 +1,14 @@
+
+#page-404{
+  width: 1300px;
+  margin: 100px auto 0;
+  display: grid;
+  grid-template-columns: 250px 650px 350px;
+  grid-gap: 25px;
+  grid-template-areas: 'left-aside page-content right-aside';
+}
+
+#page-404 img {
+  max-width: 100% !important;
+}
+
