@@ -1,0 +1,109 @@
+/* усі блоги зі скролом справа */
+
+#blog-post {
+    width: 1200px;
+    margin: 160px auto 0;
+    display: grid;
+    grid-template-columns: 225px 1fr 300px;
+    grid-gap: 20px;
+}
+
+@media(max-width: 1240px) {
+    #blog-post {
+        width: 95%;
+    }
+}
+
+@media(max-width: 500px) {
+    #blog-post {
+        grid-template-columns: 1fr;
+        margin-top: 100px;
+    }
+}
+
+
+/* ліва колонка */
+
+
+/* центральна шпальта */
+
+#blog-content .title {
+    color: var(--red);
+}
+
+#blog-content section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 20px 0;
+}
+
+@media(max-width: 996px) {
+    #blog-content section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 776px) {
+    #blog-content section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* окремий пост автора */
+
+#blog-content article {}
+
+#blog-content article a {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+#blog-content article a:hover {
+    color: var(--red);
+}
+
+
+/* перший лінк (автор) */
+
+#blog-content article a:first-child {
+    display: flex;
+    align-items: center;
+    /**/
+    color: var(--red);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#blog-content article a:first-child img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%
+}
+
+#blog-content article a:first-child span {
+    padding: 10px;
+}
+
+#blog-content article time {
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--light);
+    margin-top: 10px;
+}
+
+
+/* бокова колонка */
+
+#blog-aside {}
+
+#blog-aside a {
+    color: var(--red);
+    font-size: 14px;
+    line-height: 20px;
+}
