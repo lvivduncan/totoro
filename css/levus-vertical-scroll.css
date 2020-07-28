@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.levus-vertical-scroll header {
+    height: 40px;
+    position: relative;
+}
+
+.levus-vertical-scroll .up {
+    display: none;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 22px;
+    height: 14px;
+    cursor: pointer;
+    background: url(../images/arrows.png) 0 0;
+}
+
+.levus-vertical-scroll-wrapper {
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.levus-vertical-scroll ul {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.levus-vertical-scroll li {
+    display: block;
+    height: 60px;
+    width: 100%;
+    background: white;
+    overflow: hidden;
+}
+
+.levus-vertical-scroll figure {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.levus-vertical-scroll figure img {
+    width: 50px;
+    height: 50px;
+}
+
+.levus-vertical-scroll figcaption {
+    padding: 0 15px;
+}
+
+.levus-vertical-scroll footer {
+    height: 40px;
+    position: relative;
+}
+
+.levus-vertical-scroll .down {
+    display: none;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 22px;
+    height: 14px;
+    background: url(../images/arrows.png) -11px 0;
+    cursor: pointer;
+}
