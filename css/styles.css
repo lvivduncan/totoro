@@ -1,43 +1,13 @@
-/* fontello */
-
 @import url('./icons.css');
-
-/* base style */
-
 @import url('./root.css');
-
-/* navigation */
-
 @import url('./nav.css');
-
-/* home-page other style */
-
 @import url('./home.css');
-
-/* inner page style */
-
+@import url('./header.css');
 @import url('./page.css');
-
-/* scroll */
-
 @import url('./scroll.css');
-
-/* footer */
-
 @import url('./footer.css');
-
-/* edit */
-
 @import url('./edit.css');
-
-/* 404 */
-
 @import url('./404.css');
-
-/* blogs */
-
 @import url('./blogs.css');
-
-/**/
-
+@import url('./blog-post.css');
 @import url('./levus-vertical-scroll.css');

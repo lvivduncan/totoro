@@ -2,9 +2,10 @@
 
 #blog-post {
     width: 1200px;
-    margin: 160px auto 0;
+    margin: 40px auto 0;
     display: grid;
     grid-template-columns: 225px 1fr 300px;
+    grid-template-areas: 'blog-user blog-content blog-aside';
     grid-gap: 20px;
 }
 
@@ -14,9 +15,18 @@
     }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 996px) {
+    #blog-post {
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: 'blog-user blog-aside' 'blog-content blog-aside';
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 776px) {
     #blog-post {
         grid-template-columns: 1fr;
+        grid-template-areas: 'blog-user' 'blog-content' 'blog-aside';
         margin-top: 100px;
     }
 }
@@ -24,11 +34,56 @@
 
 /* ліва колонка */
 
+#blog-user {
+    padding: 20px;
+    grid-area: blog-user;
+}
+
+#blog-user img,
+#blog-user a,
+#blog-user b,
+#blog-user span {
+    display: block;
+    margin: 0 0 5px;
+}
+
+#blog-user img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+#blog-user a {
+    display: block;
+}
+
+#blog-user b {
+    display: block;
+    color: var(--red);
+}
+
+#blog-user span {
+    display: block;
+    color: var(--black);
+}
+
 
 /* центральна шпальта */
 
-#blog-content .title {
-    color: var(--red);
+#blog-content {
+    grid-area: blog-content;
+}
+
+#blog-content p,
+#blog-content h1,
+#blog-content h2,
+#blog-content h3,
+#blog-content h4,
+#blog-content h5 {
+    margin: 0 0 23px;
+}
+
+#blog-content img {
+    max-width: 100%!important;
 }
 
 #blog-content section {
@@ -53,9 +108,7 @@
 
 /* окремий пост автора */
 
-#blog-content article {}
-
-#blog-content article a {
+#blog-content a {
     display: block;
     font-size: 18px;
     line-height: 20px;
@@ -63,44 +116,16 @@
     color: var(--black);
 }
 
-#blog-content article a:hover {
+#blog-content a:hover {
     color: var(--red);
 }
 
 
-/* перший лінк (автор) */
+/* ппава бокова колонка */
 
-#blog-content article a:first-child {
-    display: flex;
-    align-items: center;
-    /**/
-    color: var(--red);
-    font-size: 16px;
-    margin-bottom: 10px;
+#blog-aside {
+    grid-area: blog-aside;
 }
-
-#blog-content article a:first-child img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%
-}
-
-#blog-content article a:first-child span {
-    padding: 10px;
-}
-
-#blog-content article time {
-    display: block;
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--light);
-    margin-top: 10px;
-}
-
-
-/* бокова колонка */
-
-#blog-aside {}
 
 #blog-aside a {
     color: var(--red);

@@ -3,504 +3,547 @@
 //////////////////////////////// */
 
 #nav {
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 20;
-  padding: 10px 0 0;
-
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.75) 100%);
-
-  display: grid;
-  grid-template-columns: auto 300px 900px 100px auto;
-  grid-template-rows: 1fr;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    padding: 10px 0 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.75) 100%);
+    display: grid;
+    grid-template-columns: auto 300px 900px 100px auto;
+    grid-template-rows: 1fr;
 }
+
 
 /* ////////////
 інверсія хедера
 //////////// */
-#nav.white{
-  background: var(--white);
-  border-bottom: 1px solid var(--light);
+
+#nav.white {
+    background: var(--white);
+    border-bottom: 1px solid var(--light);
 }
 
 @media(max-width: 1340px) {
-  #nav {
-    grid-template-columns: auto 300px 1fr 60px auto;
-  }
+    #nav {
+        grid-template-columns: auto 300px 1fr 60px auto;
+    }
 }
 
 @media(max-width: 776px) {
-  #nav {
-    height: 60px;
-    grid-template-columns: auto 1fr 40px 130px auto;
-  }
+    #nav {
+        height: 60px;
+        grid-template-columns: auto 1fr 40px 130px auto;
+    }
 }
+
 
 /* + прокрутка */
+
 #nav.scroll {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
 }
 
+
 /* білий фон прокрутки */
+
 #nav.white.scroll {
-  background: var(--white);
+    background: var(--white);
 }
 
 #logo {
-  grid-area: 1 / 2 / 2 / 3;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-
-  background: url('../images/logo-vgolos.png') no-repeat center center;
-  text-indent: -9999px;
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background: url('../images/logo-vgolos.png') no-repeat center center;
+    text-indent: -9999px;
 }
 
+
 /* сіре лого */
-.white #logo{
-  background-image: url('../images/logo-vgolos-gray.png');
+
+.white #logo {
+    background-image: url('../images/logo-vgolos-gray.png');
 }
 
 @media(max-width: 1340px) {
-  #logo {
-    width: 220px;
-    background-size: 220px;
-    margin-left: 30px;
-  }
+    #logo {
+        width: 220px;
+        background-size: 220px;
+        margin-left: 30px;
+    }
 }
 
 @media(max-width: 776px) {
-  #logo {
-    width: 140px;
-    background-size: 140px;
-  }
+    #logo {
+        width: 140px;
+        background-size: 140px;
+    }
 }
 
 @media(max-width: 500px) {
-  #logo {
-    width: 120px;
-    background-size: 120px;
-    margin-left: 20px;
-  }
+    #logo {
+        width: 120px;
+        background-size: 120px;
+        margin-left: 20px;
+    }
 }
 
 #menu {
-  grid-area: 1 / 3 / 2 / 4;
+    grid-area: 1 / 3 / 2 / 4;
 }
 
 @media(max-width: 776px) {
-  #menu {
-    display: none;
-  }
+    #menu {
+        display: none;
+    }
 }
 
+
 /* верхнє меню */
+
 #top-menu {}
 
+
 /* пункти меню зліва */
+
 #main-menu {
-  padding: 10px;
-  display: inline-block;
+    padding: 10px;
+    display: inline-block;
 }
 
 @media(max-width: 1200px) {
-  #main-menu {
-    display: block;
-    text-align: center;
-  }
+    #main-menu {
+        display: block;
+        text-align: center;
+    }
 }
 
 #main-menu li {
-  display: inline-block;
+    display: inline-block;
 }
 
 #main-menu li a {
-  display: block;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-  text-decoration: none;
-  padding: 0 12px;
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 12px;
 }
+
 
 /* темні пункти меню */
-.white #main-menu li a{
-  color: var(--black);
+
+.white #main-menu li a {
+    color: var(--black);
 }
 
+
 /* пункти меню світлі на мобільному */
-.white .show #main-menu li a{
-  color: var(--white);
+
+.white .show #main-menu li a {
+    color: var(--white);
 }
 
 #main-menu li a:hover {
-  color: var(--red);
+    color: var(--red);
 }
+
 
 /* соціальні кнопки справа */
+
 #social-menu {
-  display: inline-block;
-  color: var(--white);
-  padding: 10px;
+    display: inline-block;
+    color: var(--white);
+    padding: 10px;
 }
 
+
 /* темні лінки соціалок */
+
 .white #social-menu {
-  color: var(--black);
+    color: var(--black);
 }
 
 @media(max-width: 1200px) {
-  #social-menu {
-    display: block;
-    text-align: center;
-  }
+    #social-menu {
+        display: block;
+        text-align: center;
+    }
 }
 
 #social-menu li {
-  display: inline-block;
-  margin: 0 11px;
+    display: inline-block;
+    margin: 0 11px;
 }
 
 #social-menu li a {
-  color: var(--white);
+    color: var(--white);
 }
 
+
 /* темні лінки соціалок */
-.white #social-menu li a{
-  color: var(--black);
+
+.white #social-menu li a {
+    color: var(--black);
 }
 
 #social-menu li a:hover {
-  color: var(--red);
+    color: var(--red);
 }
 
 #social-menu li a i {
-  font-size: 20px;
+    font-size: 20px;
 }
+
 
 /* ///////////////
 меню на мобільному
 /////////////// */
+
 #menu.show {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: var(--opacity-black);
-  grid-area: none;
-  z-index: 35;
-  height: 100vh;
-  padding-top: 50px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--opacity-black);
+    grid-area: none;
+    z-index: 35;
+    height: 100vh;
+    padding-top: 50px;
 }
 
 #menu.show #main-menu li {
-  display: block;
-  margin: 0 0 5px;
+    display: block;
+    margin: 0 0 5px;
 }
 
 #menu.show #hot-menu,
 #menu.show #hot-menu ul {
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
 }
 
 #menu.show #hot-menu::before {
-  text-align: center;
-  display: block;
+    text-align: center;
+    display: block;
 }
 
-@media(max-width: 776px){
-  #menu.show #hot-menu::before {
-    margin: 0 0 5px;
-  }
+@media(max-width: 776px) {
+    #menu.show #hot-menu::before {
+        margin: 0 0 5px;
+    }
 }
 
 #menu.show #hot-menu li {
-  margin: 0 0 10px;
-  display: block;
+    margin: 0 0 10px;
+    display: block;
 }
 
+
 /* кнопка закриття мобільного меню */
+
 #menu.show .close {
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  z-index: 40;
-  cursor: pointer
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 40;
+    cursor: pointer
 }
 
 #menu.show .close::after,
 #menu.show .close::before {
-  content: '';
-  height: 3px;
-  width: 30px;
-  background: var(--white);
-  position: absolute;
-  top: 15px;
-  left: 0
+    content: '';
+    height: 3px;
+    width: 30px;
+    background: var(--white);
+    position: absolute;
+    top: 15px;
+    left: 0
 }
 
 #menu.show .close::after {
-  transform: rotate(50deg)
+    transform: rotate(50deg)
 }
 
 #menu.show .close::before {
-  transform: rotate(-50deg)
+    transform: rotate(-50deg)
 }
 
 #menu.show .close.active {
-  display: block
+    display: block
 }
 
+
 /* Актуальні теми: */
+
 #hot-menu {
-  display: inline-block;
-  padding: 10px 10px 10px 20px;
+    display: inline-block;
+    padding: 10px 10px 10px 20px;
 }
 
 @media(max-width: 1200px) {
-  #hot-menu {
-    display: none;
-  }
+    #hot-menu {
+        display: none;
+    }
 }
 
 #hot-menu::before {
-  content: 'Актуальні теми:';
-  text-transform: uppercase;
-  color: var(--white);
+    content: 'Актуальні теми:';
+    text-transform: uppercase;
+    color: var(--white);
 }
 
 .white #hot-menu::before {
-  color: var(--black);
+    color: var(--black);
 }
 
 #hot-menu ul {
-  display: inline-block;
+    display: inline-block;
 }
 
 #hot-menu ul li {
-  display: inline-block;
-  margin: 0 0 0 5px;
-  padding: 0 0 0 5px;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    padding: 0 0 0 5px;
 }
 
 #hot-menu ul li a {
-  color: var(--white);
-  display: inline-block;
-  margin: 0 0 0 5px;
+    color: var(--white);
+    display: inline-block;
+    margin: 0 0 0 5px;
 }
+
 
 /* гарячі теми темним */
-.white #hot-menu ul li a{
-  color: var(--black);
+
+.white #hot-menu ul li a {
+    color: var(--black);
 }
 
+
 /* гарячі теми світлі на мобільному */
-.white .show #hot-menu ul li a{
-  color: var(--white);
+
+.white .show #hot-menu ul li a {
+    color: var(--white);
 }
 
 #hot-menu ul li a:hover {
-  color: var(--red);
+    color: var(--red);
 }
 
 #hot-menu ul li::before {
-  content: '#';
-  width: 10px;
-  height: 10px;
-  padding: 0 5px;
-  border-radius: 10px;
-  background: var(--white);
-  color: var(--black);
+    content: '#';
+    width: 10px;
+    height: 10px;
+    padding: 0 5px;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--black);
 }
 
 .white #hot-menu ul li::before {
-  background: var(--black);
-  color: var(--white);
+    background: var(--black);
+    color: var(--white);
 }
 
+
 /* пошук */
+
 #search {
-  grid-area: 1 / 4 / 2 / 5;
-  color: var(--white);
-  padding: 10px;
-  font-size: 26px;
-  cursor: pointer;
+    grid-area: 1 / 4 / 2 / 5;
+    color: var(--white);
+    padding: 10px;
+    font-size: 26px;
+    cursor: pointer;
 }
 
 @media(max-width: 776px) {
-  #search {
-    padding: 0;
-    grid-area: 1 / 3 / 2 / 4;
-  }
+    #search {
+        padding: 0;
+        grid-area: 1 / 3 / 2 / 4;
+    }
 }
+
+.white #search {
+    color: var(--dark);
+}
+
 
 /* ///////////
 mobile buttons
 /////////// */
 
 #mobile {
-  display: none;
-
-  grid-area: 1 / 4 / 2 / 5;
-  order: 3;
+    display: none;
+    grid-area: 1 / 4 / 2 / 5;
+    order: 3;
 }
 
 @media(max-width: 776px) {
-  #mobile {
-    display: flex;
-    align-items: center;
-    height: 38px;
-  }
+    #mobile {
+        display: flex;
+        align-items: center;
+        height: 38px;
+    }
 }
+
 
 /* ///////////////
 mobile-menu button
 /////////////// */
 
 #menu-button {
-  color: var(--white);
-  font-size: 26px;
-  cursor: pointer;
+    color: var(--white);
+    font-size: 26px;
+    cursor: pointer;
 }
 
+
 /* чорна кнопка */
-.white #menu-button{
-  color: var(--black);
+
+.white #menu-button {
+    color: var(--black);
 }
+
 
 /* ////////////////
 button online-radio
 //////////////// */
 
 #radio {
-  color: var(--white);
-  font-size: 14px;
-  height: 30px;
-  line-height: 30px;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: var(--white);
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.white #radio{
-  color: var(--black);
+.white #radio {
+    color: var(--black);
 }
 
 #radio span {
-  height: 30px;
-  line-height: 30px;
-  display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
 }
 
 #radio i {
-  font-size: 26px;
-  color: var(--red);
+    font-size: 26px;
+    color: var(--red);
 }
+
 
 /* //////////
 кнопка пошуку
 ////////// */
 
+
 /* блок бажано розмістити у самому низу */
-#search-form{
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: var(--opacity-black);
-  z-index: 35;
+
+#search-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--opacity-black);
+    z-index: 35;
 }
 
 #search-form.show {
-  display: block;
+    display: block;
 }
 
+
 /* кнопка закриття мобільного меню */
+
 #search-form.show .close {
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  z-index: 40;
-  cursor: pointer
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 40;
+    cursor: pointer
 }
 
 #search-form.show .close::after,
 #search-form.show .close::before {
-  content: '';
-  height: 3px;
-  width: 30px;
-  background: var(--white);
-  position: absolute;
-  top: 15px;
-  left: 0
+    content: '';
+    height: 3px;
+    width: 30px;
+    background: var(--white);
+    position: absolute;
+    top: 15px;
+    left: 0
 }
 
 #search-form.show .close::after {
-  transform: rotate(50deg)
+    transform: rotate(50deg)
 }
 
 #search-form.show .close::before {
-  transform: rotate(-50deg)
+    transform: rotate(-50deg)
 }
 
 #search-form.show .close.active {
-  display: block
+    display: block
 }
 
-#search-form form{
-  display: flex;
-  min-width: 220px;
-  width: auto;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#search-form form {
+    display: flex;
+    min-width: 220px;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#search-form input[type="search"]{
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--light);
-  color: var(--light);
-  font-size: 14px;
-  border-right: none;
-  outline: none;
-  background: none;
+#search-form input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light);
+    color: var(--light);
+    font-size: 14px;
+    border-right: none;
+    outline: none;
+    background: none;
 }
 
-#search-form button{
-  width: 38px;
-  height: 38px;
-  outline: none;
-  border: 1px solid var(--light);
-  border-left: none;
-  background: none;
-  cursor: pointer;
+#search-form button {
+    width: 38px;
+    height: 38px;
+    outline: none;
+    border: 1px solid var(--light);
+    border-left: none;
+    background: none;
+    cursor: pointer;
 }
 
-#search-form button i{
-  font-family: 'fontello';
-  content: '\e800';
-  color: var(--light);
-  font-size: 16px;
-  display: inline-block;
+#search-form button i {
+    font-family: 'fontello';
+    content: '\e800';
+    color: var(--light);
+    font-size: 16px;
+    display: inline-block;
 }
