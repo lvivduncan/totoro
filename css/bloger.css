@@ -1,0 +1,164 @@
+/* усі блоги зі скролом справа */
+
+#bloger-page {
+    width: 1200px;
+    margin: 160px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: "bloger-autor bloger-aside" "bloger-content bloger-aside";
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+}
+
+@media (max-width: 1240px) {
+    #bloger-page {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    #bloger-page {
+        grid-template-columns: 1fr;
+        margin-top: 100px;
+        grid-template-areas: "bloger-autor" "bloger-content" "bloger-aside";
+    }
+}
+
+
+/* ліва шпальта */
+
+
+/* про автора */
+
+#bloger-autor {
+    margin: 10px 0;
+    grid-area: bloger-autor;
+    /**/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas: "bloger-autor-img bloger-autor-h1" "bloger-autor-img bloger-autor-p";
+}
+
+@media (max-width: 360px) {
+    #bloger-autor {
+        grid-template-columns: 1fr;
+        grid-template-areas: "bloger-autor-img" "bloger-autor-h1" "bloger-autor-p";
+    }
+}
+
+#bloger-autor img {
+    width: 150px;
+    height: 150px;
+    grid-area: bloger-autor-img;
+    border-radius: 100%;
+}
+
+@media (max-width: 360px) {
+    #bloger-autor img {
+        margin: 0 auto 20px;
+    }
+}
+
+#bloger-autor h1 {
+    grid-area: bloger-autor-h1;
+    /**/
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: auto;
+    margin-left: 30px;
+}
+
+@media (max-width: 360px) {
+    #bloger-autor h1 {
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+#bloger-autor p {
+    grid-area: bloger-autor-p;
+    /**/
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--light-gray);
+    margin-bottom: auto;
+    margin-left: 30px;
+}
+
+@media (max-width: 360px) {
+    #bloger-autor p {
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+
+/* пости автора */
+
+#bloger-content {
+    grid-area: bloger-content;
+}
+
+#bloger-content .title {
+    color: var(--red);
+}
+
+#bloger-content section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 20px 0;
+}
+
+@media (max-width: 996px) {
+    #bloger-content section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 776px) {
+    #bloger-content section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* окремий пост автора */
+
+#bloger-content article a {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+#bloger-content article a:hover {
+    color: var(--red);
+}
+
+#bloger-content article time {
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--light);
+    margin-top: 10px;
+}
+
+
+/* бокова колонка */
+
+#bloger-aside {
+    grid-area: bloger-aside;
+}
+
+#bloger-aside a {
+    color: var(--red);
+    font-size: 14px;
+    line-height: 20px;
+}
