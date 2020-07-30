@@ -24,13 +24,13 @@
 
 /* ліва шпальта */
 
-#blog-content {}
+#blogs-content {}
 
-#blog-content .title {
+#blogs-content .title {
     color: var(--red);
 }
 
-#blog-content section {
+#blogs-content section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
@@ -38,13 +38,13 @@
 }
 
 @media(max-width: 996px) {
-    #blog-content section {
+    #blogs-content section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media(max-width: 776px) {
-    #blog-content section {
+    #blogs-content section {
         grid-template-columns: 1fr;
     }
 }
@@ -52,9 +52,9 @@
 
 /* окремий пост автора */
 
-#blog-content article {}
+#blogs-content article {}
 
-#blog-content article a {
+#blogs-content article a {
     display: block;
     font-size: 18px;
     line-height: 20px;
@@ -62,14 +62,14 @@
     color: var(--black);
 }
 
-#blog-content article a:hover {
+#blogs-content article a:hover {
     color: var(--red);
 }
 
 
 /* перший лінк (автор) */
 
-#blog-content article a:first-child {
+#blogs-content article a:first-child {
     display: flex;
     align-items: center;
     /**/
@@ -78,17 +78,17 @@
     margin-bottom: 10px;
 }
 
-#blog-content article a:first-child img {
+#blogs-content article a:first-child img {
     width: 100px;
     height: 100px;
     border-radius: 50%
 }
 
-#blog-content article a:first-child span {
+#blogs-content article a:first-child span {
     padding: 10px;
 }
 
-#blog-content article time {
+#blogs-content article time {
     display: block;
     font-size: 12px;
     line-height: 18px;
@@ -99,9 +99,9 @@
 
 /* бокова колонка */
 
-#blog-aside {}
+#blogs-aside {}
 
-#blog-aside a {
+#blogs-aside a {
     color: var(--red);
     font-size: 14px;
     line-height: 20px;
