@@ -12,6 +12,8 @@
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <meta name="amp-script-src" content="sha384-burOJiVRpfDS9gXovtKBcMwPiX3Wjn_u2CDPuidgiVJBott9_a0U9-NnfMFD8kdT" />
 
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+
     <link rel="canonical" href="post.html">
 
     <script type="application/ld+json">
@@ -84,6 +86,10 @@
         #articles .autor{grid-area:articles-autor;font-size:12px;color:#656d78}
         #articles h4{grid-area:articles-h4;font-weight:400;line-height:20px;margin:5px 0}
         #articles h4 a{font-size:18px;font-weight:700;color:#000;text-decoration:none}
+
+        .scroll{padding:10px;margin:20px 0}.scroll p{padding:10px}
+        #scroll-news{background:#666;color:var(--white)}
+        #scroll-blog img{border-radius:50%}
 
         #footer{background:#f6f7fb;font-size:14px;padding:50px 10px 10px}
         #footer nav{columns:3;column-gap:10px;margin-bottom:20px}#footer a{display:block;color:#666;font-weight:700;text-transform:uppercase;text-decoration:none;margin:0 10px 10px}
@@ -243,16 +249,67 @@
     
     <amp-ad type="ad-name" class="ad" width="100" height="50" data-ad_block="news_after_articles"></amp-ad>
     
-    <div class="levus-scroll-wrapper" id="scroll-news" data-ajax_load="media">
+    <div class="scroll" id="scroll-news">
         <header class="title">Фото-Відео</header>
+
+        <amp-carousel type="slides"
+            width="300"
+            height="300"
+            controls
+            loop
+            autoplay
+            delay="3000" data-next-button-aria-label="Наступне фото"
+            data-previous-button-aria-label="Попереднє фото"
+            role="region"
+            aria-label="Looping carousel">
+
+            <div>
+                <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+                <p>1 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+            </div>
+            <div>
+                <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+                <p>2 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+            </div>
+            <div>
+                <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+                <p>3 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+            </div>
+        
+      </amp-carousel>
 
     </div>
     
     <amp-ad type="ad-name" class="ad" width="100" height="50" data-ad_block="news_after_media"></amp-ad>
     
-    <div class="levus-scroll-wrapper" id="scroll-blogs" data-ajax_load="blogs">
+    <div class="scroll" id="scroll-blogs">
         <header class="title">Люди</header>
-        
+
+        <amp-carousel type="slides"
+            width="300"
+            height="300"
+            controls
+            loop
+            autoplay
+            delay="3000" data-next-button-aria-label="Наступне фото"
+            data-previous-button-aria-label="Попереднє фото"
+            role="region"
+            aria-label="Looping carousel">
+
+        <div>
+            <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+            <p>1 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+        </div>
+        <div>
+            <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+            <p>2 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+        </div>
+        <div>
+            <amp-img layout="responsive" src="temp/protest.webp" width="420" height="236"></amp-img>
+            <p>3 Протести проти карантинних обмежень у Барселоні перерости у заворушення (відео)</p>
+        </div>
+    
+  </amp-carousel>
     </div>
 
     <amp-ad type="ad-name" class="ad" width="100" height="50" data-ad_block="news_after_blog"></amp-ad>
@@ -260,30 +317,29 @@
 
 
 
-<footer id="footer">
-    <nav>
-        <a href="/news">Новини</a>
-        <a href="/articles">Тема Вголос</a>
-        <a href="/media">Фото-відео</a>
-        <a href="/blogs">Люди</a>
-        <a href="/lviv">Львів</a>
-        <a href="/politic">Політика</a>
-        <a href="/economic">Економіка</a>
-        <a href="/zhyttya">Життя</a>
-        <a href="/svit">Світ</a>
-        <a href="/sport">Спорт</a>
-        <a href="/about">Про нас</a>
-        <a href="/reklama">Реклама</a>
-        <a href="/archive">Архів</a>
-        <a href="/struktura-vlasnosti">Структура власності</a>
-    </nav>
+    <footer id="footer">
+        <nav>
+            <a href="/news">Новини</a>
+            <a href="/articles">Тема Вголос</a>
+            <a href="/media">Фото-відео</a>
+            <a href="/blogs">Люди</a>
+            <a href="/lviv">Львів</a>
+            <a href="/politic">Політика</a>
+            <a href="/economic">Економіка</a>
+            <a href="/zhyttya">Життя</a>
+            <a href="/svit">Світ</a>
+            <a href="/sport">Спорт</a>
+            <a href="/about">Про нас</a>
+            <a href="/reklama">Реклама</a>
+            <a href="/archive">Архів</a>
+            <a href="/struktura-vlasnosti">Структура власності</a>
+        </nav>
 
-    <amp-img height="74" width="243" src="images/logo-footer.webp" srcset="images/logo-footer.webp 320w" alt=""></amp-img>
+        <amp-img height="74" width="243" src="images/logo-footer.webp" srcset="images/logo-footer.webp 320w" alt=""></amp-img>
 
-    <p>ІНФОРМАЦІЙНА АГЕНЦІЯ «ВГОЛОС» © 2002—2020</p>
-    <small>При повному або частковому відтворенні матеріалів активне посилання на Вголос обов'язкове. Адміністраціясайту може не поділяти думку автора і не несе відповідальності за авторські матеріали.</small>
-</footer>
-
+        <p>ІНФОРМАЦІЙНА АГЕНЦІЯ «ВГОЛОС» © 2002—2020</p>
+        <small>При повному або частковому відтворенні матеріалів активне посилання на Вголос обов'язкове. Адміністраціясайту може не поділяти думку автора і не несе відповідальності за авторські матеріали.</small>
+    </footer>
 
     <script id="mobile-menu" type="text/plain" target="amp-script">
         const btnOpen = document.querySelector('#menu-open');
