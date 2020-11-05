@@ -31,26 +31,35 @@
 
     <style amp-custom>
         html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box}
-
-        body{font:16px/1.5 'Fira Sans',Arial,sans-serif;color:#000;background:#fff}
+        :root{--white:#fff;--black:#000;}
+        body{font:16px/1.5 'Fira Sans',Arial,sans-serif;color:#000;background:var(--white)}
         amp-img{max-width: 100%!important;height:auto}
         a{color:#0451a8}
         #nav{position:fixed;height:60px;width:100%;left:0;top:0;z-index:20;padding:10px;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center}
 
-        #logo{display:block;text-decoration:none;background:url(images/logo-vgolos.png) no-repeat center center / 120px;text-indent:-9999px;height:50px;width:120px; margin: 0 auto 0 0}
-        #menu{display:none}
-        #menu.show{display:flex;flex-flow:column;align-items: center;justify-content: center; position:fixed;top:0;left:0;bottom:0;right:0;background:#000}
-        #menu-close{position:absolute;top:20px;right:20px;width:20px;height:20px;fill:#fff}
-        #search{width:22px}
+        #logo{display:block;text-decoration:none;background:url(images/logo-vgolos.png)no-repeat center center/120px;text-indent:-9999px;height:50px;width:120px;margin:0 auto 0 0}
         #menu-open{width:30px;margin-left:10px}
+        #menu{display:none;text-align:center}
+        #menu span{width:100%;padding:10px}
+        #menu span svg{width:26px}
+        #menu svg{fill:var(--white)}
+        #menu.show{display:flex;flex-flow:column;align-items:center;justify-content:center;position:fixed;top:0;left:0;bottom:0;right:0;background:#000}
+        #menu-close{position:absolute;top:20px;right:20px;width:20px;height:20px}
+        #top-menu a{display:block}
+        #menu a{text-decoration:none;text-transform:uppercase;color:var(--white);margin:10px}
+        #hot-menu{color:var(--white)}
+        #hot-menu a{display:block;text-transform:none}
+        #hot-menu em{display:inline-block;background:var(--white);color:var(--black);font-style:normal;border-radius:20px;width:20px;height:20px}
+
+        #search{width:22px;display:flex;align-items:center;justify-content:center}#search svg{fill:var(--white);width:22px}
         #radio{margin-left:10px;position:relative;display:flex;text-decoration:none}
-        .icon-play-circled,.icon-play-circled::before{display:inline-block;margin-left:2px}
+        .icon-play-circled,.icon-play-circled::before{display:inline-block;margin-left:2px;margin-top:4px}
         .icon-play-circled::before {content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:rgb(255, 255, 255)"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"/></svg>');width:24px}
-        #radio span{color:#fff}
+        #radio{display:flex;align-items:center;justify-content:center}#radio span{color:var(--white)}
 
         /* фонова картинка вставляється сюди! */
-        #header{height:400px;position:relative;background:url('//vgolos.com.ua/img/07/f8/07f8dc510884c65112eeb732fa60bd58-w425h400.webp')center center / cover;color:#fff;padding:10px;text-shadow:2px 2px 1px #000;display:flex;align-items:flex-start;justify-content:flex-end;flex-flow:column}
-        .category{margin-bottom:18px}.category a{color:#fff;text-decoration:none}
+        #header{height:400px;position:relative;background:url('//vgolos.com.ua/img/07/f8/07f8dc510884c65112eeb732fa60bd58-w425h400.webp')center center / cover;color:var(--white);padding:10px;text-shadow:2px 2px 1px #000;display:flex;align-items:flex-start;justify-content:flex-end;flex-flow:column}
+        .category{margin-bottom:18px}.category a{color:var(--white);text-decoration:none}
         #header h1{font-size:20px;line-height:22px}
         #header time{display:block;margin-top:20px}
 
@@ -75,6 +84,11 @@
         #articles .autor{grid-area:articles-autor;font-size:12px;color:#656d78}
         #articles h4{grid-area:articles-h4;font-weight:400;line-height:20px;margin:5px 0}
         #articles h4 a{font-size:18px;font-weight:700;color:#000;text-decoration:none}
+
+        #footer{background:#f6f7fb;font-size:14px;padding:50px 10px 10px}
+        #footer nav{columns:3;column-gap:10px;margin-bottom:20px}#footer a{display:block;color:#666;font-weight:700;text-transform:uppercase;text-decoration:none;margin:0 10px 10px}
+        #footer p{line-height:15px;margin:15px 0;color:#666;font-weight: 700;text-transform: uppercase;}
+        #footer small{display: block;font-size: 12px;color:#656d78}
       </style>
 </head>
 
@@ -84,7 +98,7 @@
         <a href="/" id="logo">Vgolos</a>
 
         <a href="/search.php" id="search">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:rgb(255, 255, 255)"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
         </a>
 
         <a href="http://ua.uar.net:8000/vgolos.m3u" id="radio">
@@ -94,16 +108,40 @@
         <amp-script width="38" height="30" script="mobile-menu">
             <div id="menu">
                 <nav id="top-menu">
-                    <ul>
-                        <li><a href="/news">Новини</a></li>
-                        <li><a href="/articles">Теми</a></li>
-                        <li><a href="/media">Фото-відео</a></li>
-                        <li><a href="/blogs">Люди</a></li>
-                        <li><a href="/lviv">Львів</a></li>
-                    </ul>
+                    <a href="/news">Новини</a>
+                    <a href="/articles">Теми</a>
+                    <a href="/media">Фото-відео</a>
+                    <a href="/blogs">Люди</a>
+                    <a href="/lviv">Львів</a>
                 </nav>
 
                 <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357"><polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 214.2,178.5" /></svg>
+
+                <span>
+                    <a href="https://www.facebook.com/vgolos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" /></svg>
+                    </a>
+                    <a href="https://twitter.com/vgolosua">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" /></svg>
+                    </a>
+                    <a href="https://t.me/IA_VGOLOS">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"/></svg>
+                    </a>
+                    <a href="mailto:westnews@mail.lviv.ua">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC9whF2YXId4cgCbSHkiw_lQ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123 C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126 h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225 C438.532,59.576,430.49,40.204,414.41,24.123z M258.958,63.378h19.13v77.654c0,4.57,0.089,7.045,0.28,7.426 c0.192,3.046,1.719,4.567,4.572,4.567c3.806,0,7.807-2.948,11.991-8.848V63.378h19.13v105.637h-19.13h-0.007v-11.425 c-7.803,8.563-15.129,12.85-21.98,12.85c-6.088,0-10.181-2.568-12.278-7.708c-1.144-3.424-1.708-8.66-1.708-15.704V63.378 L258.958,63.378z M186.725,97.64c0-11.038,1.999-19.32,5.996-24.838c5.138-7.232,12.559-10.85,22.266-10.85 c9.329,0,16.754,3.621,22.268,10.85c4,5.519,5.999,13.8,5.999,24.838v37.117c0,11.421-1.999,19.701-5.999,24.839 c-5.514,7.236-12.939,10.852-22.268,10.852c-9.707,0-17.128-3.619-22.266-10.852c-3.997-5.52-5.996-13.8-5.996-24.839V97.64z M135.331,27.119l15.133,55.677l14.56-55.677h21.414l-25.697,84.51h0.004v57.386h-21.127v-57.386 c-2.096-10.468-6.473-25.505-13.134-45.108c-4.377-13.134-6.567-19.701-6.567-19.701l-6.855-19.701H135.331L135.331,27.119z M370.593,371.729c-1.903,8.18-5.948,15.126-12.139,20.842c-6.181,5.708-13.363,9.041-21.55,9.996 c-26.073,2.851-65.288,4.28-117.628,4.28c-52.344,0-91.553-1.43-117.628-4.28c-8.183-0.955-15.367-4.288-21.555-9.996 c-6.186-5.716-10.229-12.662-12.133-20.842c-3.805-15.991-5.708-40.737-5.708-74.233c0-32.935,1.903-57.67,5.708-74.233 c1.905-8.375,5.948-15.371,12.133-20.988c6.188-5.617,13.466-8.901,21.842-9.851c25.882-2.859,64.997-4.284,117.341-4.284 c52.535,0,91.746,1.429,117.628,4.284c8.187,0.953,15.41,4.233,21.693,9.851c6.283,5.614,10.38,12.609,12.282,20.988 c3.61,15.797,5.421,40.539,5.421,74.233C376.301,330.991,374.397,355.733,370.593,371.729z"/><polygon points="85.651,244.678 107.921,244.678 107.921,365.445 129.048,365.445 129.048,244.678 151.889,244.678 151.889,224.692 85.651,224.692"/><path d="M190.149,340.607c-4.187,5.896-8.186,8.847-11.991,8.847c-2.665,0-4.093-1.427-4.283-4.281 c-0.191-0.38-0.287-2.854-0.287-7.426v-77.088h-18.843v82.796c0,7.234,0.572,12.374,1.715,15.413 c1.712,5.332,5.711,7.994,11.991,7.994c7.042,0,14.275-4.281,21.698-12.847v11.424h19.126V260.666h-19.126V340.607z"/><path d="M264.099,259.235c-6.852,0-13.326,3.806-19.411,11.423v-45.966h-19.13v140.753h19.13v-10.279 c6.276,7.802,12.755,11.703,19.411,11.703c7.806,0,12.847-3.997,15.126-11.991c1.334-3.997,1.998-10.944,1.998-20.841v-41.682 c0-10.089-0.671-17.132-1.998-21.129C276.945,263.232,271.904,259.235,264.099,259.235z M262.384,335.468 c0,9.325-2.758,13.982-8.281,13.989c-3.23,0-6.376-1.525-9.422-4.571v-63.954c3.046-3.038,6.191-4.564,9.422-4.564 c5.523,0,8.281,4.753,8.281,14.271V335.468z"/><path d="M333.466,335.324c0,1.998-0.049,3.565-0.137,4.709c-0.093,1.143-0.145,1.81-0.145,1.998 c-1.14,4.945-3.997,7.419-8.565,7.419c-6.472,0-9.709-4.853-9.709-14.558v-18.555h37.973v-21.703 c0-11.037-1.995-19.219-5.995-24.551c-5.134-7.231-12.56-10.852-22.269-10.852s-17.319,3.62-22.843,10.852 c-3.806,5.14-5.708,13.329-5.708,24.551v36.832c0,11.231,1.998,19.418,5.995,24.558c5.523,7.231,13.23,10.852,23.131,10.852 c10.088,0,17.699-3.806,22.843-11.423c2.282-3.429,3.716-7.234,4.284-11.42c0.377-2.666,0.568-6.759,0.568-12.278v-2.563v-0.007 h-19.417v6.14H333.466z M314.917,290.925c0-9.705,3.142-14.558,9.422-14.558c6.283,0,9.421,4.853,9.421,14.558v9.712h-18.843 V290.925z"/><path d="M214.987,153.025c6.091,0,9.135-4.851,9.135-14.558v-44.54c0-9.895-3.044-14.847-9.135-14.847 c-6.09,0-9.135,4.952-9.135,14.847v44.54C205.852,148.171,208.897,153.025,214.987,153.025z"/></g></svg>
+                    </a>
+                </span>
+
+                <nav id="hot-menu">
+                    СПЕЦПРОЕКТИ:
+                    <a href="/tags/govoryt-velykyj-lviv"><em>#</em> Говорить ВЕЛИКИЙ Львів</a>
+                    <a href="/tags/koronavirus"><em>#</em> коронавірус</a>
+                    <a href="/tags/narodne-tolk-shou"><em>#</em> Народне толк-шоу</a>
+                </nav>
+
             </div>
 
             <svg id="menu-open" fill="rgb(255,255,255)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384 384"><g><rect x="0" y="277.333" width="384" height="42.667"/><rect x="0" y="170.667" width="384" height="42.667"/><rect x="0" y="64" width="384" height="42.667"/></g></svg>
@@ -116,18 +154,6 @@
         <h1>Зеленський сьогодні проведе зустріч з Марківим</h1>
         <time>4.11.2020 | 16:50</time>
     </header>
-
-    <script id="mobile-menu" type="text/plain" target="amp-script">
-        const btnOpen = document.querySelector('#menu-open');
-        const btnClose = document.querySelector('#menu-close');
-        const menu = document.querySelector('#menu');
-        btnOpen.addEventListener('click', function(){
-            menu.classList.add('show');
-        });
-        btnClose.addEventListener('click', function(){
-            menu.classList.remove('show');
-        });
-    </script>
 
     <main id="page-content">
         <amp-ad type="ad-name" class="ad" width="100" height="50" data-ad_block="news_before"></amp-ad>
@@ -231,6 +257,45 @@
 
     <amp-ad type="ad-name" class="ad" width="100" height="50" data-ad_block="news_after_blog"></amp-ad>
 
+
+
+
+<footer id="footer">
+    <nav>
+        <a href="/news">Новини</a>
+        <a href="/articles">Тема Вголос</a>
+        <a href="/media">Фото-відео</a>
+        <a href="/blogs">Люди</a>
+        <a href="/lviv">Львів</a>
+        <a href="/politic">Політика</a>
+        <a href="/economic">Економіка</a>
+        <a href="/zhyttya">Життя</a>
+        <a href="/svit">Світ</a>
+        <a href="/sport">Спорт</a>
+        <a href="/about">Про нас</a>
+        <a href="/reklama">Реклама</a>
+        <a href="/archive">Архів</a>
+        <a href="/struktura-vlasnosti">Структура власності</a>
+    </nav>
+
+    <amp-img height="74" width="243" src="images/logo-footer.webp" srcset="images/logo-footer.webp 320w" alt=""></amp-img>
+
+    <p>ІНФОРМАЦІЙНА АГЕНЦІЯ «ВГОЛОС» © 2002—2020</p>
+    <small>При повному або частковому відтворенні матеріалів активне посилання на Вголос обов'язкове. Адміністраціясайту може не поділяти думку автора і не несе відповідальності за авторські матеріали.</small>
+</footer>
+
+
+    <script id="mobile-menu" type="text/plain" target="amp-script">
+        const btnOpen = document.querySelector('#menu-open');
+        const btnClose = document.querySelector('#menu-close');
+        const menu = document.querySelector('#menu');
+        btnOpen.addEventListener('click', function(){
+            menu.classList.add('show');
+        });
+        btnClose.addEventListener('click', function(){
+            menu.classList.remove('show');
+        });
+    </script>
 </body>
 
 </html>
